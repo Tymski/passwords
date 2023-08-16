@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generators</title>
+  <script type="text/javascript" src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Password Generator</h1>
+    <p>
+      What if you generate password not with 60ish alphanumeric symbols, but with 100000 different unicode symbols? There isn't even a font that can display them all. Even if you share your screen with the password on it, nobody will be able to retype that password!
+    </p>
+    <p>
+      Secure password needs to be unpredictable and long. A 6 characters length password may be cracked instantly, 10 characters in a couple of seconds, 30 characters will give you millennia. In a dictionary attack, each common word can be cracked with similar ease as a character.
+    </p>
+    <p>
+      Generate new passwords for different websites. You may not know if a website leaked your password.
+    </p>
+    <p>
+      30 random numbers
+    </p>
+    <div class="monospace pass" id="passwordNumbers"></div>
+    <p>
+      30 random alphanumeric characters + basic special characters
+    </p>
+    <div class="monospace pass" id="password"></div>
+    <p>
+      30 random utf symbols
+    </p>
+    <div class="monospace pass" id="passwordSymbols"></div>
+    <div style="display: none;" id="passwordSymbols1"></div>
+    <br><br>
+    <button id="createPasswordButton">Create a password in clipboard.</button>
+  </main>
+</body>
+
+</html>
