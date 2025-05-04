@@ -68,3 +68,21 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
     margin-bottom: 10px;
 }
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #95e39f;
+    color: #292A2D;
+    padding: 12px 24px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+}

@@ -4,6 +4,7 @@ const passwordSymbols = document.getElementById('passwordSymbols');
 const passwordSymbols1 = document.getElementById('passwordSymbols1');
 const passwordSymbolsAdd = document.getElementById('passwordSymbolsAdd');
 const createPasswordButton = document.getElementById('createPasswordButton');
+const toast = document.getElementById('toast');
 
 const numbers = "0123456789";
 const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -49,13 +50,20 @@ function getRandomSymbol() {
     return "&#" + symbol + ";";
 }
 
+function showToast() {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
 function generatePasswordToClipboard(element) {
     navigator.clipboard.writeText(element.innerHTML);
     element.innerHTML = generateSymbols();
+    showToast();
 }
 
 function copyToClipboard(element) {
     navigator.clipboard.writeText(element.innerHTML);
+    showToast();
 }
 
 function addWebisteChecks(password) {
