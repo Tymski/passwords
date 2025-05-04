@@ -75,11 +75,36 @@ function addWebisteChecks(password) {
 }
 
 function generate() {
-    password.innerHTML = generatePassword();
+    password.innerHTML = generatePasswordWithChecks();
     passwordNumbers.innerHTML = generateNumber();
     passwordSymbols.innerHTML = generateSymbols();
     passwordSymbols1.innerHTML = addWebisteChecks(generateSymbols());
     passwordSymbolsAdd.innerHTML = addWebisteChecks(generateSymbols());
+}
+
+function hasFromCharset(str, charset) {
+    for (let char of str) {
+        if (charset.includes(char)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function generatePasswordWithChecks() {
+    let password = "";
+    do {
+        password = "";
+        for (let i = 0; i < 30; ++i) {
+            password += getRandomCharacter(commonSymbols);
+        }
+    } while (
+        !hasFromCharset(password, lowerCaseLetters) ||
+        !hasFromCharset(password, upperCaseLetters) ||
+        !hasFromCharset(password, numbers) ||
+        !hasFromCharset(password, basicSymbols)
+    );
+    return password;
 }
 
 createPasswordButton.onclick = () => generatePasswordToClipboard(passwordSymbols1);
