@@ -20,27 +20,34 @@
       Secure password needs to be unpredictable and long. A 6 characters length password may be cracked instantly, 10 characters in a couple of seconds, 30 characters will give you millennia. In a dictionary attack, each common word can be cracked with similar ease as a character.
     </p>
     <p>
-      Generate new passwords for different websites. You may not know if a website leaked your password.
+      Generate new passwords for different websites. You may not know if a website leaked your password. Use a secure password manager.
     </p>
-    <p>
-      30 random numbers
-    </p>
-    <div class="monospace pass" id="passwordNumbers"></div>
-    <p>
-      30 random alphanumeric characters + basic special characters. Useful if you need to retype the password on another device. (I added a rule to always have at least one lowercase letter, uppercase letter, number and a basic special character)
-    </p>
-    <div class="monospace pass" id="password"></div>
-    <p>
-      30 random utf symbols
-    </p>
-    <div class="monospace pass" id="passwordSymbols"></div>
-    <div style="display: none;" id="passwordSymbols1"></div>
-    <p>
+    <section class="passBox"></section>
+      <p>30 random numbers</p>
+      <div class="monospace pass" id="passwordNumbers"></div>
+    </section>
+
+    <section class="passBox"></section>
+      <p>
+      30 random alphanumeric characters + basic special characters. Useful if you need to retype the password on another device. (I added a rule to always have at least one lowercase letter, uppercase letter, number and a basic special character, because a lot of website require it)
+      </p>
+      <div class="monospace pass" id="password"></div>
+    </section>
+
+    <section class="passBox">
+      <p>30 random utf symbols</p>
+      <div class="monospace pass" id="passwordSymbols"></div>
+      <div style="display: none;" id="passwordSymbols1"></div>
+    </section>
+
+    <section class="passBox">
+      <p>
       30 random utf symbols + website checks. Some websites require one lowercase letter, one uppercase, one number and one special character.
-    </p>
-    <div class="monospace pass" id="passwordSymbolsAdd"></div>
-    <br><br>
-    <button id="createPasswordButton">Create a password in clipboard.</button>
+      </p>
+      <div class="monospace pass" id="passwordSymbolsAdd"></div>
+      <br><br>
+      <button id="createPasswordButton">Create a password in clipboard.</button>
+    </section>
   </main>
   <div id="toast" class="toast">Copied to clipboard!</div>
 </body>
