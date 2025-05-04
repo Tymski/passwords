@@ -1,23 +1,29 @@
 main {
-    padding: 10px 30px 30px;
+    padding: clamp(5px, 5%, 20px) clamp(5px, 5%, 40px);
+    width: 90%;
     max-width: 1200px;
     background: #292A2D;
     color: #e4e5e7;
-    font-size: 25px;
+    font-size: clamp(16px, 4vw, 25px);
     font-family: 'Roboto';
     border-radius: 30px;
+    margin: 20px auto;
 }
 
 body {
     background-color: #202124;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 button {
     display: inline-block;
-    padding: 15px 40px;
-    font-size: 20px;
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 40px);
+    font-size: clamp(16px, 3vw, 20px);
     font-weight: bold;
     text-align: center;
     border-radius: 999px;
@@ -36,13 +42,23 @@ button:hover {
     font-family: monospace;
 }
 
-.pass{
+.pass {
     background-color: #202124;
     padding: 4px;
-    margin: 4px;
-    width: 800px;
-    height: 50px;
+    margin: 4px auto;
+    width: 90%;
+    max-width: 800px;
+    min-height: 50px;
     border-radius: 30px;
-    line-height: 50px;
+    line-height: 1.4;
     text-align: center;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pass:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
