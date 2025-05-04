@@ -4,7 +4,7 @@ main {
     max-width: 1200px;
     background: #292A2D;
     color: #e4e5e7;
-    font-size: clamp(16px, 4vw, 25px);
+    font-size: clamp(14px, 3.5vw, 22px);
     font-family: 'Roboto';
     border-radius: 30px;
     margin: 20px auto;
@@ -61,4 +61,10 @@ button:hover {
 
 .pass:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 10px;
 }

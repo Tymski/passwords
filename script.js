@@ -1,19 +1,29 @@
+const password = document.getElementById('password');
+const passwordNumbers = document.getElementById('passwordNumbers');
+const passwordSymbols = document.getElementById('passwordSymbols');
+const passwordSymbols1 = document.getElementById('passwordSymbols1');
+const createPasswordButton = document.getElementById('createPasswordButton');
+
+const numbers = "0123456789";
+const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const basicSymbols = "!#$%&*+-=?@^_()";
+const commonSymbols = numbers + lowerCaseLetters + upperCaseLetters + basicSymbols;
+
 function generatePassword() {
     var length = 30;
-    var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+-=?@^_()";
     var password = "";
     for (var i = 0; i < length; ++i) {
-        password += getRandomCharacter(charset);
+        password += getRandomCharacter(commonSymbols);
     }
     return password;
 }
 
 function generateNumber() {
     var length = 30;
-    var charset = "0123456789";
     var password = "";
     for (var i = 0; i < length; ++i) {
-        password += getRandomCharacter(charset);
+        password += getRandomCharacter(numbers);
     }
     return password;
 }
@@ -42,18 +52,19 @@ function getRandomSymbol() {
     return "&#" + symbol + ";";
 }
 
-function generatePasswordToClipboard() {
-    navigator.clipboard.writeText(document.getElementById('passwordSymbols1').innerHTML);
-    document.getElementById('passwordSymbols1').innerHTML = generateSymbols();
+function generatePasswordToClipboard(element) {
+    navigator.clipboard.writeText(element.innerHTML);
+    element.innerHTML = generateSymbols();
 }
 
 function generate() {
-    document.getElementById('password').innerHTML = generatePassword();
-    document.getElementById('passwordNumbers').innerHTML = generateNumber();
-    document.getElementById('passwordSymbols').innerHTML = generateSymbols();
-    document.getElementById('passwordSymbols1').innerHTML = generateSymbols();
+    password.innerHTML = generatePassword();
+    passwordNumbers.innerHTML = generateNumber();
+    passwordSymbols.innerHTML = generateSymbols();
+    passwordSymbols1.innerHTML = generateSymbols();
 }
-document.getElementById('createPasswordButton').onclick = generatePasswordToClipboard;
+
+createPasswordButton.onclick = () => generatePasswordToClipboard(passwordSymbols1);
 generate();
 
 setInterval(generate, 500);
