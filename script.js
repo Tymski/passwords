@@ -66,7 +66,7 @@ function copyToClipboard(element) {
     showToast();
 }
 
-function addWebisteChecks(password) {
+function addWebsiteChecks(password) {
     var prefix = getRandomCharacter(numbers);
     prefix += getRandomCharacter(lowerCaseLetters);
     prefix += getRandomCharacter(upperCaseLetters);
@@ -78,8 +78,8 @@ function generate() {
     password.innerHTML = generatePasswordWithChecks();
     passwordNumbers.innerHTML = generateNumber();
     passwordSymbols.innerHTML = generateSymbols();
-    passwordSymbols1.innerHTML = addWebisteChecks(generateSymbols());
-    passwordSymbolsAdd.innerHTML = addWebisteChecks(generateSymbols());
+    passwordSymbols1.innerHTML = addWebsiteChecks(generateSymbols());
+    passwordSymbolsAdd.innerHTML = addWebsiteChecks(generateSymbols());
 }
 
 function hasFromCharset(str, charset) {
@@ -107,7 +107,7 @@ function generatePasswordWithChecks() {
     return password;
 }
 
-createPasswordButton.onclick = () => generatePasswordToClipboard(passwordSymbols1);
+if (createPasswordButton) createPasswordButton.onclick = () => generatePasswordToClipboard(passwordSymbols1);
 password.onclick = () => copyToClipboard(password);
 passwordNumbers.onclick = () => copyToClipboard(passwordNumbers);
 passwordSymbols.onclick = () => copyToClipboard(passwordSymbols);
@@ -116,3 +116,9 @@ passwordSymbolsAdd.onclick = () => copyToClipboard(passwordSymbolsAdd);
 generate();
 
 setInterval(generate, 500);
+
+
+const btnPass = document.getElementById('btn-pass');
+const btnText = document.getElementById('btn-text');
+btnPass.addEventListener('click', function () { document.body.classList.toggle('hidden-password'); });
+btnText.addEventListener('click', function () { document.body.classList.toggle('hidden-text'); });
